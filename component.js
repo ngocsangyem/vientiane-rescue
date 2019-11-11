@@ -56,7 +56,11 @@ if (componentName) {
 			console.log(colors.red(`Cancel operation: ${err}`));
 		} else {
 			console.log('Created: ' + colors.green(dirPath));
-
+			mkdirp(`${dirPath}test/`, err => {
+				if (err) {
+					console.log(colors.red(`Cancel operation: ${err}`));
+				}
+			});
 			// We go around the array of extensions and create files if they have not yet been created.
 			extensions.forEach(extension => {
 				const filePath = `${dirPath +
@@ -66,7 +70,6 @@ if (componentName) {
 				let fileContent = ''; // file content
 				let fileCreateMsg = ''; // message in console when creating file
 				let dirName = Capitalize(path.basename(path.dirname(filePath)));
-				let fileName = Capitalize(path.basename(filePath));
 				const sassTemplate = `// Colors of this file should follow the rule of colors in styles folder`;
 				const scssTemplate = `// Colors of this file should follow the rule of colors in styles folder`;
 				const jsTemplate = `/* ES6 module */\n\nconst ${dirName}Component = () => {
@@ -75,7 +78,7 @@ if (componentName) {
 
 export {${dirName}Component};`;
 				const pugTemplate = '';
-				const testTemplate = `import ${dirName}Component from './${path.basename(
+				const testTemplate = `import ${dirName}Component from '../${path.basename(
 					path.dirname(filePath)
 				)}.component';
 describe('${dirName}Component View', function() {
@@ -108,26 +111,53 @@ it('Should run a few assertions', () => {
 				}
 
 				if (fileExist(filePath) === false) {
-					fs.writeFile(
-						`${dirPath}${handleComponentName()}.component.${extension}`,
-						fileContent,
-						err => {
-							if (err) {
-								return console.log(
-									colors.red(`File is NOT created: ${err}`)
+					if (extension !== 'test.js') {
+						fs.writeFile(
+							`${dirPath}${handleComponentName()}.component.${extension}`,
+							fileContent,
+							err => {
+								if (err) {
+									return console.log(
+										colors.red(
+											`File is NOT created: ${err}`
+										)
+									);
+								}
+								console.log(
+									'Created: ' +
+										colors.green(
+											`${dirPath}${handleComponentName()}.component.${extension}`
+										)
 								);
+								if (fileCreateMsg) {
+									console.warn(fileCreateMsg);
+								}
 							}
-							console.log(
-								'Created: ' +
-									colors.green(
-										`${dirPath}${handleComponentName()}.component.${extension}`
-									)
-							);
-							if (fileCreateMsg) {
-								console.warn(fileCreateMsg);
+						);
+					} else {
+						fs.writeFile(
+							`${dirPath}test/${handleComponentName()}.component.${extension}`,
+							fileContent,
+							err => {
+								if (err) {
+									return console.log(
+										colors.red(
+											`File is NOT created: ${err}`
+										)
+									);
+								}
+								console.log(
+									'Created: ' +
+										colors.green(
+											`${dirPath}test/${handleComponentName()}.component.${extension}`
+										)
+								);
+								if (fileCreateMsg) {
+									console.warn(fileCreateMsg);
+								}
 							}
-						}
-					);
+						);
+					}
 				}
 			});
 		}
