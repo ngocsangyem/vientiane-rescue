@@ -72,11 +72,11 @@ if (componentName) {
 				let dirName = Capitalize(path.basename(path.dirname(filePath)));
 				const sassTemplate = `// Colors of this file should follow the rule of colors in styles folder`;
 				const scssTemplate = `// Colors of this file should follow the rule of colors in styles folder`;
-				const jsTemplate = `/* ES6 module */\n\nconst ${dirName}Component = () => {
-	console.log('This is ${dirName}Component')
-}
-
-export {${dirName}Component};`;
+				const jsTemplate = `/* ES6 module */\n\nexport class ${dirName}Component {
+	constructor() {
+		console.log('This is ${dirName}Component');
+	}
+}`;
 				const pugTemplate = '';
 				const testTemplate = `import ${dirName}Component from '../${path.basename(
 					path.dirname(filePath)
