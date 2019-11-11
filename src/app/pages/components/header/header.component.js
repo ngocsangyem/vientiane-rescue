@@ -1,4 +1,5 @@
 /* ES6 module */
+import { nodeToArray } from '../../../shared/helpers/index';
 
 export class HeaderComponent {
 	constructor() {
@@ -14,61 +15,67 @@ export class HeaderComponent {
 		});
 	}
 
-	menuAnimation() {
-		const line = document.querySelector('.obw-menu-line');
-		const listLinks = document.querySelectorAll('.obw-menu .obw-menu-link');
+	slidingUnderline() {
+		const breakpoint = window.matchMedia('(min-width: 1100px)').matches;
+		let activeLink = document.querySelector(
+			'.obw-header .obw-menu-list .obw-menu-item.is-active'
+		);
+		let underline = document.querySelector(
+			'.obw-header .obw-menu-navbar .obw-menu-line'
+		);
+		const menuList = document.querySelector('.obw-header .obw-menu-list');
+		const menuLinkList = nodeToArray(
+			document.querySelectorAll(
+				'.obw-header .obw-menu-list .obw-menu-item'
+			)
+		);
+		const menuAnchors = nodeToArray(
+			document.querySelectorAll(
+				'.obw-header .obw-menu-list .obw-menu-item'
+			)
+		);
 
-		for (let i = 0; i < listLinks.length; i++) {
-			listLinks[i].addEventListener('click', e => e.preventDefault());
-			listLinks[i].addEventListener('mouseenter', mouseenterFunc);
+		function setActiveUnderline(activeLink, underline) {
+			underline.style.left = activeLink.offsetLeft + 'px';
+			underline.style.width = activeLink.offsetWidth + 'px';
 		}
 
-		function mouseenterFunc() {
-			for (let i = 0; i < listLinks.length; i++) {
-				if (listLinks[i].parentNode.classList.contains('active')) {
-					listLinks[i].parentNode.classList.remove('active');
-				}
-				listLinks[i].style.opacity = '0.25';
-			}
+		if (activeLink && breakpoint) {
+			setActiveUnderline(activeLink, underline);
 
-			this.parentNode.classList.add('active');
-			this.style.opacity = '1';
+			menuList.addEventListener('mouseover', function(event) {
+				let selectedWidth = event.target.offsetWidth;
+				let newleftpos = event.target.offsetLeft;
+				underline.style.left = newleftpos + 'px';
+				underline.style.width = selectedWidth + 'px';
+			});
 
-			const width = this.getBoundingClientRect().width;
-			const height = this.getBoundingClientRect().height;
-			const left = this.getBoundingClientRect().left;
-			const top = this.getBoundingClientRect().top;
+			menuList.addEventListener('mouseout', function(event) {
+				underline.style.left = activeLink.offsetLeft + 'px';
+				underline.style.width = activeLink.offsetWidth + 'px';
+			});
 
-			line.style.width = `${width}px`;
-			line.style.height = `${height}px`;
-			line.style.left = `${left}px`;
-			line.style.top = `${top}px`;
-			line.style.transform = 'none';
+			menuAnchors.forEach(anchor => {
+				anchor.addEventListener('click', function(event) {
+					event.preventDefault();
+					menuLinkList.forEach(list => {
+						list.classList.remove('is-active');
+					});
+					event.target.parentNode.classList.add('is-active');
+
+					activeLink = document.querySelector(
+						'.obw-header .obw-menu-list .obw-menu-item.is-active'
+					);
+					underline = document.querySelector('.obw-menu-line');
+
+					setActiveUnderline(activeLink, underline);
+				});
+			});
 		}
-
-		function resizeFunc() {
-			const active = document.querySelector(
-				'.obw-menu .obw-menu-item.active'
-			);
-
-			if (active) {
-				const left =
-					active.getBoundingClientRect().left + window.pageXOffset;
-				const top =
-					active.getBoundingClientRect().top + window.pageYOffset;
-
-				line.style.left = `${left}px`;
-				line.style.top = `${top}px`;
-			}
-		}
-
-		window.addEventListener('resize', resizeFunc);
 	}
 
 	init() {
 		this.clickMenu();
-		// if (window.matchMedia('(min-width: 1100px)').matches) {
-		// 	this.menuAnimation();
-		// }
+		this.slidingUnderline();
 	}
 }
