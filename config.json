@@ -20,7 +20,9 @@
 		"fonts": "fonts/",
 		"data": "data/",
 		"pages": "pages/",
-		"shared": "shared/"
+		"shared": "shared/",
+		"audio": "audio/",
+		"video": "video/"
 	},
 	"author": {
 		"name": "[your name]",

@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import path from 'path';
 
 import { plugins, args, config, taskTarget, browserSync } from '../utils';
 

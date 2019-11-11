@@ -1,4 +1,3 @@
-
 import path from 'path';
 import gulp from 'gulp';
 import glob from 'glob';
@@ -20,6 +19,8 @@ gulp.task(
 		gulp.parallel(
 			'sass',
 			'pug',
+			'copy:video',
+			'copy:audio',
 			'browserify',
 			'fonts',
 			'images',
@@ -38,6 +39,8 @@ gulp.task(
 			'pug',
 			'sass',
 			'fonts',
+			'copy:video',
+			'copy:audio',
 			'images',
 			'concatCss',
 			'concatJs',
@@ -60,6 +63,8 @@ gulp.task(
 			'pug',
 			'sass',
 			'fonts',
+			'copy:video',
+			'copy:audio',
 			'images',
 			'concatCss',
 			'concatJs',
@@ -79,10 +84,16 @@ gulp.task(
 // gulp.task('default', gulp.series('clean', 'build'));
 
 // Testing
-gulp.task('test', gulp.series('eslint', (done) => {
-	new KarmaServer({
-	  configFile: path.join(__dirname, '/karma.conf.js'),
-	  singleRun: !args.watch,
-	  autoWatch: args.watch
-	}, done).start();
-  }));
+gulp.task(
+	'test',
+	gulp.series('eslint', done => {
+		new KarmaServer(
+			{
+				configFile: path.join(__dirname, '/karma.conf.js'),
+				singleRun: !args.watch,
+				autoWatch: args.watch
+			},
+			done
+		).start();
+	})
+);
