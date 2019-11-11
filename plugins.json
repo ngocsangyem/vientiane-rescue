@@ -1,4 +1,4 @@
 {
-	"styles": ["src/assets/css/reset.css"],
-	"scripts": ["src/assets/js/ofi.min.js"]
+	"styles": ["src/assets/css/reset.css", "src/assets/css/grid.css", "src/assets/css/fonts.css"],
+	"scripts": ["src/assets/js/lazysizes.min.js"]
 }

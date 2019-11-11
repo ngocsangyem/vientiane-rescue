@@ -1,1 +1,29 @@
 // Colors of this file should follow the rule of colors in styles folder
+.obw-header
+	background-color: map-get($colors, neutral-8)
+	+pad(5px null)
+	position: sticky
+	top: 0
+	left: 0
+	width: 100%
+	.obw-header-container
+		display: flex
+		align-items: center
+	.obw-social
+		.obw-social-button
+			color: map-get($colors, white)
+			font-size: 22px
+			display: inline-block
+			vertical-align: middle
+			padding: 5px
+	.obw-menu
+		.obw-menu-link
+			display: block
+			line-height: 1.3
+			font-weight: 600
+			text-transform: uppercase
+			color: map-get($colors, white)
+			text-align: center
+		.obw-menu-line
+			display: none
+

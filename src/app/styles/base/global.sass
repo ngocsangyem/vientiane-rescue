@@ -19,9 +19,32 @@ a
 
 ul, li
 	list-style-type: none
-	padding: 0
-	margin: 0
 
+picture
+	display: block
+	height: 100%
+
+img
+	display: block
+	vertical-align: middle
+
+.full-height
+	height: 100%
+
+.half-height
+	height: 50vh
+
+.full-width
+	width: 100%
+
+.half-min-height
+	min-height: 50vh
+
+.full-min-height
+	min-height: 100vh
+
+.position-relative
+	position: relative
 
 .obw-section
 	position: relative
@@ -31,7 +54,10 @@ ul, li
 	@media (min-width: 1100px)
 		font-size: 20px
 
-.background-color-primary
+.background-black
+	background-color: map-get($colors, black)
+
+.background-primary
 	background-color: map-get($colors, primary)
 
 .background-white-light-opacity-9
@@ -53,3 +79,35 @@ ul, li
 
 .border-color-white
 	border-color: map-get($colors, white)
+
+.text-block
+	position: absolute
+	&.block-move-x-center
+		left: 50%
+		transform: translate(-50%)
+	&.block-move-y-center
+		top: 50%
+		transform: translateY(-50%)
+		&.block-move-x-center
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+	@media (min-width: 750px)
+		max-width: 90%
+	@media (min-width: 900px)
+		max-width: 750px
+	@media (min-width: 1100px)
+		max-width: 850px
+	@media (min-width: 1400px)
+		max-width: 1100px
+
+.px-25
+	+pad(null 25px)
+
+@media (min-width: 620px)
+	.px-sm-30
+		+pad(null 30px)
+
+@media (min-width: 1100px)
+	.px-lg-40
+		+pad(null 40px)
