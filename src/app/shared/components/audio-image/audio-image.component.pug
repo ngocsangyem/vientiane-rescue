@@ -1,8 +1,13 @@
+include ../image/image.component.pug
+
 mixin audioImage(audioSrc, imageSrc)
 	.audio-container.audio-init.js-audio.has-image
-		audio.audio(src='./audio/shirley.mp3')
+		audio.audio(src=audioSrc)
 		.obw-image
-			img(src='./img/image-3.jpeg', alt='')
+			+image({
+				class: 'width-full',
+				src: imageSrc
+			})
 		.obw-audio-button
 			i.mdi.mdi-volume-mute
 	

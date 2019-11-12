@@ -1,3 +1,5 @@
+include ../../../../../shared/components/image/image.component.pug
+
 .section-photo.section-photo-1
 	.container
 		.row
@@ -12,4 +14,7 @@
 	.background-list.background-scroll-animation
 		.background-scroll-animation-inner
 			.background-item
-				img.width-full.height-full(src="./img/chapter-1/image-1.jpeg", alt="")
+				+image({
+					class: 'width-full height-full',
+					src: './img/chapter-1/image-1.jpeg'
+				})

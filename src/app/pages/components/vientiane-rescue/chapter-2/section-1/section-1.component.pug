@@ -1,0 +1,20 @@
+include ../../../../../shared/components/audio-button-secondary/audio-button-secondary.component.pug
+include ../../../../../shared/components/image/image.component.pug
+.section-photo.section-photo-2
+	.container
+		.row
+			.col-sm-10.col-sm-center.col-md-6.col-md-left
+				.body-text
+					.space-size-100-vh
+					.space-size-40-px
+					+audioSecondary('./audio/Accident_Scene_Witness_4.mp3')
+					p.text-shadow-1
+						strong EVEN THOUGH road accidents are common in Vientiane, crash scenes still attract the morbid curiosity of bystanders. But for some, doing nothing was no longer enough. Instead, they were moved to take action, and signed up as volunteers with Vientiane Rescue.
+					.space-size-100-vh
+	.background-list.background-scroll-animation
+		.background-scroll-animation-inner
+			.background-item
+				+image({
+					class: 'width-full height-full',
+					src: './img/chapter-2/section-1.jpeg'
+				})

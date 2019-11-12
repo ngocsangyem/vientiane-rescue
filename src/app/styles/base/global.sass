@@ -66,6 +66,15 @@ img
 .hidden-layer-2
 	z-index: -2
 
+.mx-auto
+	+mar(null auto)
+
+.link
+	@media (min-width: 1100px)
+		transition: background-color .3s ease-in-out
+		&:hover
+			background-color: map-get($colors, primary)
+
 .overflow-hidden
 	overflow: hidden
 
@@ -89,22 +98,14 @@ img
 .background-white-light-opacity-9
 	background-color: color-rgba(map-get($colors, white), .9)
 
-.line-devider
-	display: inline-block
-	border: none
-	background-color: rgba(204,204,204,.75)
-	height: 1px
-	margin: 0
-	margin-top: 2.1rem
-	margin-bottom: 2.1rem
-	overflow: hidden
-	width: 50%
-
 .border-dots
 	border-bottom: 1px dotted
 
 .border-color-white
 	border-color: map-get($colors, white)
+
+.color-primary
+	color: map-get($colors, primary)
 
 .text-block
 	position: absolute
@@ -120,6 +121,8 @@ img
 			top: 50%
 			left: 50%
 			transform: translate(-50%, -50%)
+	&.text-block-y-bottom
+		bottom: 46px
 	.sub-title
 		margin-top: .5rem
 	@media (min-width: 620px)
@@ -128,9 +131,13 @@ img
 		width: 90%
 	@media (min-width: 900px)
 		max-width: 750px
+		&.text-block-y-bottom
+			bottom: 67.5px
 	@media (min-width: 1100px)
 		+pad(null 40px)
 		max-width: 850px
+		&.text-block-y-bottom
+			bottom: 81px
 		.sub-title
 			margin-top: 1rem
 	@media (min-width: 1400px)
@@ -140,6 +147,8 @@ img
 	height: 40px
 .space-size-32-vh
 	height: 32vh
+.space-size-50-vh
+	height: 50vh
 .space-size-100-vh
 	height: 100vh
 
@@ -179,6 +188,19 @@ img
 			width: 100%
 			height: 100%
 
+.body-text
+	padding-top: calc(48px - 1.5rem)
+	padding-bottom: 48px
+	+pad(null 25px)
+	@media (min-width: 620px)
+		padding-bottom: 60px
+		padding-top: calc(60px - 1.5rem)
+		+pad(null 30px)
+	@media (min-width: 900px)
+		padding-top: calc(72px - 1.5rem)
+	@media (min-width: 1100px)
+		+pad(null 40px)
+
 .section-photo
 	position: relative
 	.body-text
@@ -192,6 +214,31 @@ img
 			font-size: 28px
 			color: map-get($colors, primary)
 			+mar(1em null)
+		a
+			color: map-get($colors, white)
+		figure
+			figcaption
+				p
+					color: #777
+					font-weight: 400
+					font-size: .8em
+					padding: .5em
+					line-height: 1.2
+					margin: 0
+		&.background-white-light-opacity-9
+			color: #424242
 		@media (max-width: 900px)
 			margin-top: 70vh
 			margin-bottom: 70vh
+
+.body-text-divider
+	display: block
+	border: none
+	background-color: rgba(204,204,204,.75)
+	height: 1px
+	margin-top: 2.1rem
+	margin-bottom: 2.1rem
+	overflow: hidden
+	width: 50%
+
+

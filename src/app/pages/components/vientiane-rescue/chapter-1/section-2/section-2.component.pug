@@ -1,4 +1,5 @@
 include ../../../../../shared/components/audio-button-primary/audio-button-primary.component.pug
+include ../../../../../shared/components/image/image.component.pug
 .section-photo.section-photo-2
 	.container
 		.row
@@ -14,4 +15,7 @@ include ../../../../../shared/components/audio-button-primary/audio-button-prima
 	.background-list.background-scroll-animation
 		.background-scroll-animation-inner
 			.background-item
-				img.width-full.height-full(src="./img/chapter-1/image-2.jpeg", alt="")
+				+image({
+					class: 'width-full height-full',
+					src: './img/chapter-1/image-2.jpeg'
+				})
