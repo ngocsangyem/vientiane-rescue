@@ -1,9 +1,9 @@
 // Components
-import { ButtonPrimaryComponent } from './components/index';
+import { AudioButtonPrimaryComponent } from './components/index';
 
 export class Shared {
 	constructor() {
-		new ButtonPrimaryComponent();
+		new AudioButtonPrimaryComponent();
 	}
 
 	static init() {

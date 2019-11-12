@@ -1,0 +1,68 @@
+// Colors of this file should follow the rule of colors in styles folder
+
+.audio-button-primary, .audio-button-secondary
+	font-size: 17px
+	font-weight: 900
+	font-family: 'Source Sans Pro', sans-serif
+	border-radius: 2px
+	background-color: #333333
+	max-width: 175px
+	padding: 15px
+	position: relative
+	display: flex
+	align-items: center
+	text-transform: uppercase
+	cursor: pointer
+	overflow: hidden
+	margin-bottom: 10px
+	.audio-actions, .audio-duration, .audio-progress
+		pointer-events: none
+	.audio-source
+		opacity: 0
+		visibility: hidden
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+	.audio-actions, .audio-duration
+		position: relative
+		z-index: 2
+	.audio-actions
+		.audio-icon
+			width: 13px
+			display: none
+		path
+			fill: #ffffff
+		.audio-text
+			display: inline-block
+			margin-left: 5px
+			color: rgba(255, 255, 255, 0.77)
+			display: none
+			user-select: none
+		.audio-action
+			display: flex
+			align-items: center
+	.audio-duration
+		color: rgba(255, 255, 255, 0.77)
+		padding-left: 10px
+		opacity: .4
+		user-select: none
+	.audio-progress
+		position: absolute
+		top: 0
+		left: 0
+		width: 0
+		height: 10%
+		background-color: #D44D23
+		// background-color: red
+		pointer-events: none
+		// transition: width .2s ease-in-out
+	&.audio-init
+		.audio-text-play, .audio-icon-play
+			display: inline-block
+	&.audio-active
+		.audio-text-pause, .audio-icon-pause
+			display: inline-block
+	&.audio-pause
+		.audio-text-resume, .audio-icon-resume
+			display: inline-block

@@ -1,4 +1,20 @@
-section.obw-intro.obw-section
-	.obw-intro-video.overflow-hidden.position-relative
-		video.video-bg.hidden-layer-1(autoplay muted loop)
-			source(type="video/mp4" src="./video/ambulance.mp4")
+include ../../../../shared/components/background-video/background-video.component.pug
+
+//- section.obw-intro.obw-section
+//- 	.obw-intro-video.overflow-hidden.position-relative
+//- 		video.video-bg.hidden-layer-1(autoplay muted loop)
+//- 			source(type="video/mp4" src="./video/ambulance.mp4")
+//- 	.obw-intro-content.text-center.text-block.text-block-y-center.text-block-x-center.text-shadow-1.fw-700
+//- 		h1.text-small
+//- 			| HOPE AND HEARTBREAK
+//- 			br
+//- 			| ON THE ROAD
+//- 		p.text-xxxsmall.sub-title Volunteer-run ambulance service Vientiane Rescue is saving thousands of lives in the Laotian capital.
++backgroundVideo({
+	classSection: 'obw-intro',
+	classVideo: 'obw-intro-video',
+	classContent: 'obw-intro-content text-block-y-center text-block-x-center',
+	srcAudio: './video/ambulance.mp4',
+	firstTitle: 'HOPE AND HEARTBREAK <br/> ON THE ROAD',
+	description: 'Volunteer-run ambulance service Vientiane Rescue is saving thousands of lives in the Laotian capital.'
+})

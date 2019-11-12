@@ -1,0 +1,21 @@
+// Colors of this file should follow the rule of colors in styles folder
+.audio-container
+	&.has-image
+		position: relative
+		.obw-audio-button
+			position: absolute
+			bottom: 0
+			left: 0
+	.obw-audio-button, .obw-image
+		pointer-events: none
+	.obw-audio-button
+		padding: 10px
+		color: #ffffff
+		font-size: 20px
+	&.audio-active
+		.obw-audio-button
+			.mdi-volume-mute
+				&:before
+					content: "\F57E"
+	@media (min-width: 992px)
+		cursor: pointer

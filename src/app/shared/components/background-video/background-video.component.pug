@@ -1,0 +1,22 @@
+mixin backgroundVideo(spec)
+	- spec = spec || {}
+	- spec.classSection = spec.classSection || ''
+	- spec.classVideo = spec.classVideo || ''
+	- spec.classContent = spec.classContent || ''
+	- spec.srcAudio = spec.srcAudio || ''
+	- spec.textPosition = spec.textPosition || ''
+	- spec.description = spec.description || ''
+	- spec.firstTitle = spec.firstTitle || false
+	- spec.secondTitle = spec.secondTitle || ''
+	- spec.titleClass = spec.titleClass || ''
+	.section-video.obw-section(class=spec.classSection)
+		.overflow-hidden.position-relative(class=spec.classVideo)&attributes(attributes)
+			video.video-bg.hidden-layer-1(autoplay muted loop)
+				source(type="video/mp4", src=spec.srcAudio)
+		.text-center.text-block.text-shadow-1.fw-700(class=spec.classContent)&attributes(attributes)
+			if spec.firstTitle
+				h1(class=spec.titleClass)!= spec.firstTitle
+			if spec.secondTitle
+				h2(class=spec.titleClass)&attributes(attributes)!= spec.secondTitle
+			if spec.description
+				p.text-xxxsmall.sub-title= spec.description

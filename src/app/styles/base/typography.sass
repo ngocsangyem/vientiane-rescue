@@ -3,6 +3,8 @@
 	font-weight: 400
 .fw-700
 	font-weight: 700
+.fw-600
+	font-weight: 600
 
 .obw-text-body
 	display: block
@@ -27,6 +29,9 @@
 .text-xxsmall
 	font-size: calc(1em + 2vmin)
 	line-height: 1.1
+	@media (max-width: 620px), (max-width: 900px) and (orientation: landscape)
+		font-size: calc(1em*1.25)
+		line-height: 1.3
 
 .text-xxxsmall
 	font-size: calc(1em + 1vmin)
@@ -47,3 +52,6 @@
 .text-color-primary
 	color: map-get($colors, primary)
 
+.body-text
+	padding-left: 25px
+	padding-right: 25px

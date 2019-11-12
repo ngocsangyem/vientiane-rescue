@@ -1,0 +1,22 @@
+mixin chapterHeading(spec)
+	- spec = spec || {}
+	- spec.class = spec.class || ''
+	- spec.description = spec.description || ''
+	- spec.subTitle = spec.subTitle || ''
+	- spec.chapter = spec.chapter || ''
+
+	.chapter-heading.background-black.position-relative.min-height-third.height-third(class=spec.class)&attributes(attributes)
+		.chapter-heading-content.text-center.text-block.text-block-y-center.text-block-x-center.fw-700
+			if block
+				block
+			else
+				if spec.chapter
+					h2.text-xxxsmall
+						em
+							sub= spec.chapter
+				if spec.subTitle
+					h3.text-xxsmall.sub-title= spec.subTitle
+				if spec.description
+					h4.text-xxsmall= spec.description
+
+

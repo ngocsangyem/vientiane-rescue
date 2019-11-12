@@ -9,7 +9,7 @@ body,html
 	color: #000
 	font-family: 'Source Sans Pro', sans-serif
 	font-weight: 400
-	font-size: 16px
+	// font-size: 16px
 	line-height: 1.15
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
@@ -23,6 +23,13 @@ ul, li
 picture
 	display: block
 	height: 100%
+
+em, sub, sup
+	font-weight: 600
+
+sub, sup
+	font-size: 70%
+	vertical-align: baseline
 
 img
 	display: block
@@ -61,7 +68,6 @@ img
 
 .overflow-hidden
 	overflow: hidden
-
 
 .position-relative
 	position: relative
@@ -102,32 +108,90 @@ img
 
 .text-block
 	position: absolute
-	&.block-move-x-center
+	+pad(null 25px)
+	width: 100%
+	&.text-block-x-center
 		left: 50%
 		transform: translate(-50%)
-	&.block-move-y-center
+	&.text-block-y-center
 		top: 50%
 		transform: translateY(-50%)
-		&.block-move-x-center
+		&.text-block-x-center
 			top: 50%
 			left: 50%
 			transform: translate(-50%, -50%)
+	.sub-title
+		margin-top: .5rem
+	@media (min-width: 620px)
+		+pad(null 30px)
 	@media (min-width: 750px)
-		max-width: 90%
+		width: 90%
 	@media (min-width: 900px)
 		max-width: 750px
 	@media (min-width: 1100px)
+		+pad(null 40px)
 		max-width: 850px
+		.sub-title
+			margin-top: 1rem
 	@media (min-width: 1400px)
 		max-width: 1100px
 
-.px-25
-	+pad(null 25px)
+.space-size-40-px
+	height: 40px
+.space-size-32-vh
+	height: 32vh
+.space-size-100-vh
+	height: 100vh
 
-@media (min-width: 620px)
-	.px-sm-30
-		+pad(null 30px)
 
-@media (min-width: 1100px)
-	.px-lg-40
-		+pad(null 40px)
+.col-sm-center
+	@media (min-width: 620px)
+		+mar(null auto)
+.col-md-right
+	@media (min-width: 900px)
+		margin-left: auto
+		margin-right: 0
+.col-md-left
+	@media (min-width: 900px)
+		margin-left: 0
+		margin-right: auto
+
+.background-list
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	&.background-scroll-animation
+		img
+			object-fit: cover
+			// object-position: 0% 50%
+		.background-scroll-animation-inner
+			position: sticky
+			top: 0
+			left: 0
+			height: 100vh
+		.background-item
+			position: absolute
+			top: 0
+			left: 0
+			display: block
+			width: 100%
+			height: 100%
+
+.section-photo
+	position: relative
+	.body-text
+		position: relative
+		z-index: 30
+		color: map-get($colors, white)
+		p
+			+mar(1.5rem null)
+			line-height: 1.7
+		h4
+			font-size: 28px
+			color: map-get($colors, primary)
+			+mar(1em null)
+		@media (max-width: 900px)
+			margin-top: 70vh
+			margin-bottom: 70vh

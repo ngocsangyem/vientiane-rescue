@@ -1,4 +1,11 @@
 {
-	"styles": ["src/assets/css/reset.css", "src/assets/css/grid.css", "src/assets/css/fonts.css"],
-	"scripts": ["src/assets/js/lazysizes.min.js"]
+	"styles": [
+		"src/assets/css/reset.css",
+		"src/assets/css/grid.css",
+		"src/assets/css/fonts.css"
+	],
+	"scripts": [
+		"src/assets/js/lazysizes.min.js",
+		"src/assets/js/ls.blur-up.min.js"
+	]
 }
