@@ -1,1 +1,2 @@
-export * from './audio-button-primary/audio-button-primary.component';
+export * from "./audio-button-primary/audio-button-primary.component";
+export * from "./custom-video-controls/custom-video-controls.component";

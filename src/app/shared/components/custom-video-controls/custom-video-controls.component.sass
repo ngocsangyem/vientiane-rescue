@@ -1,0 +1,25 @@
+// Colors of this file should follow the rule of colors in styles folder
+
+.obw-video-player-custom
+	.plyr__control--overlaid
+		background-color: color-rgba(map-get($colors, black), .4)
+		&:hover
+			background-color: map-get($colors, black)
+	.plyr__controls
+		[hidden]
+			display: inherit!important
+		.plyr__menu
+			display: none
+		input
+			color: hsla(0,0%,100%,.6)
+	.plyr__progress__container
+		.plyr__progress
+	@media (min-width: 900px)
+		.plyr__control--overlaid
+			width: 100px
+			height: 100px
+			svg
+				top: 25%
+				left: 20%
+				width: 50px
+				height: 50px

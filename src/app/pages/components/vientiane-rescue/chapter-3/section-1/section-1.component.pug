@@ -1,0 +1,20 @@
+include ../../../../../shared/components/image/image.component.pug
+include ../../../../../shared/components/audio-button-secondary/audio-button-secondary.component.pug
+.section-photo.section-1.section-photo-1
+	.container
+		.row
+			.col-sm-10.col-sm-center.col-md-right.col-md-6
+				.body-text
+					.space-size-100-vh
+					+audioSecondary('./audio/Vientiane_Siren.mp3')
+					p
+						strong JOHNSON IS SENT OUT on his first emergency of the night. He replaces the cake in his hand with the radio receiver in the ambulance, which receives updates from Mimi.
+					.space-size-100-vh
+	.background-list.background-scroll-animation
+		.background-scroll-animation-inner
+			.background-item
+				+image({
+					class: 'width-full height-full',
+					src: './img/chapter-3/section-1.jpeg'
+				})
+

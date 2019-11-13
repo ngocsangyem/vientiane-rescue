@@ -3,5 +3,4 @@ mixin image(spec)
 	- spec.class = spec.class || ''
 	- spec.src = spec.src || ''
 	- spec.alt = spec.alt || 'Our Better World'
-	- spec.objectPosition = spec.objectPosition || ''
 	img(class=spec.class src=spec.src, alt=spec.alt)&attributes(attributes)

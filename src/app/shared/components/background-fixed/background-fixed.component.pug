@@ -1,0 +1,26 @@
+include ../image/image.component.pug
+
+mixin backgroundFixed(spec)
+	- spec = spec || {}
+	- spec.classSection = spec.classSection || ''
+	- spec.classContent = spec.classContent || ''
+	- spec.srcImage = spec.srcImage || ''
+	- spec.textPosition = spec.textPosition || ''
+	- spec.title = spec.title || ''
+	- spec.titleClass = spec.titleClass || ''
+	- spec.imageStyle = spec.imageStyle || ''
+	- spec.decription = spec.decription || ''
+	.section-photo.obw-section.section-photo-fixed(class=spec.classSection)
+		.container.position-relative.height-full
+			.text-block.text-shadow-1.fw-700(class=spec.classContent)&attributes(attributes)
+				if spec.title
+					h2(class=spec.titleClass)&attributes(attributes)!= spec.title
+				if spec.decription
+					!= spec.decription
+		.background-list.background-scroll-fixed
+			.background-scroll-fixed-inner
+				.background-item
+					+image({
+						class: 'width-full height-full',
+						src: spec.srcImage
+					})(style = spec.imageStyle)

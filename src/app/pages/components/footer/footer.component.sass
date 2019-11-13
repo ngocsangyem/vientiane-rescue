@@ -1,1 +1,24 @@
 // Colors of this file should follow the rule of colors in styles folder
+.obw-footer
+	color: map-get($colors, white)
+	.footer-title
+		font-size: 18px
+	.footer-content
+		font-size: 16px
+	.footer-logo
+		width: 50%
+		img
+			width: 100%
+	.footer-copyright
+		font-size: 12px
+	.body-text
+		p
+			+mar(1.5rem null)
+			line-height: 1.7
+		a
+			color: map-get($colors, white)
+			border-bottom: 1px solid map-get($colors, white)
+			display: inline-block
+		.footer-logo
+			a
+				border: none

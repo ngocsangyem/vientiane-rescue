@@ -2,10 +2,12 @@
 	"styles": [
 		"src/assets/css/reset.css",
 		"src/assets/css/grid.css",
-		"src/assets/css/fonts.css"
+		"src/assets/css/fonts.css",
+		"src/assets/css/plyr.css"
 	],
 	"scripts": [
 		"src/assets/js/lazysizes.min.js",
-		"src/assets/js/ls.blur-up.min.js"
+		"src/assets/js/ls.blur-up.min.js",
+		"src/assets/js/plyr.min.js"
 	]
 }

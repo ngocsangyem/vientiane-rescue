@@ -1,0 +1,21 @@
+include ../../../../../shared/components/audio-button-primary/audio-button-primary.component.pug
+include ../../../../../shared/components/image/image.component.pug
+.section-photo.section-1.section-photo-1
+	.container
+		.row
+			.col-sm-10.col-sm-center.col-md-6.col-md-left
+				.body-text
+					.space-size-100-vh
+					p.text-shadow-1
+						strong AFTER ANOTHER HECTIC NIGHT, Sébastien takes volunteers out for supper at a popular noodle stall. He worries about their future, particularly for those who volunteer full-time. The plan is to find more avenues of funding, so he can pay full-timers a living wage. So far, Vientiane Rescue has been supported by private donations, and operates on a tight budget of US$5,000 a month. 
+					+audioPrimary('./audio/Vientiane_SOT_29.mp3')
+					h4.text-shadow-1
+						| "Behind the question of volunteerism, there's a question of equity, as well. These people save lives and risk their own lives, and get nothing." - Sébastien
+					.space-size-100-vh
+	.background-list.background-scroll-animation
+		.background-scroll-animation-inner
+			.background-item
+				+image({
+					class: 'width-full height-full',
+					src: './img/chapter-4/section-1.jpeg'
+				})

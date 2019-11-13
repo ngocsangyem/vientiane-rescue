@@ -1,0 +1,21 @@
+include ../../../../../shared/components/image/image.component.pug
+include ../../../../../shared/components/audio-button-primary/audio-button-primary.component.pug
+
+.section-photo.section-3.section-photo-3
+	.container
+		.row
+			.col-sm-10.col-sm-center.col-md-right.col-md-6
+				.body-text
+					.space-size-40-vh
+					.space-size-100-vh
+					p.text-shadow-1
+						strong A new day rolls in at Dong Dok station, and it is Mimi’s turn to surprise another volunteer with a birthday cake. Within the huddle of this special moment, the future of the Vientiane Rescue family looks bright. Sébastien believes that the service will live on as long as volunteers continue to take pride in and ownership of Vientiane Rescue.
+					+audioPrimary('./audio/Vientiane_SOT_33.mp3')
+					.space-size-100-vh
+	.background-list.background-scroll-animation
+		.background-scroll-animation-inner
+			.background-item
+				+image({
+					class: 'width-full height-full',
+					src: './img/chapter-4/section-3.jpeg'
+				})

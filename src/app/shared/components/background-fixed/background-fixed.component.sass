@@ -1,0 +1,19 @@
+// Colors of this file should follow the rule of colors in styles folder
+.section-photo-fixed
+	position: relative
+	.text-block
+		z-index: 20
+		color: map-get($colors, white)
+		@media (min-width: 900px)
+			width: 60%
+	.background-scroll-fixed
+		overflow: hidden
+		clip: rect(0,auto,auto,0)
+		.background-scroll-fixed-inner
+			img
+				z-index: 1
+				position: fixed
+				top: 0
+				transform: translateZ(0)
+				backface-visibility: hidden
+				object-fit: cover

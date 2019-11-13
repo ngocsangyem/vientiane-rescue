@@ -1,0 +1,5 @@
+mixin customVideoControls(videoSrc, posterSrc)
+	.obw-video-player.obw-video-player-custom
+		.video-player-wrapper
+			video(poster= posterSrc,crossorigin, playsinline, controls, class="js-player")
+				source(src=videoSrc, type="video/mp4")
