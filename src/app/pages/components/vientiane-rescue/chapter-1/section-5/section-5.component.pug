@@ -1,45 +1,48 @@
 include ../../../../../shared/components/image/image.component.pug
-.section-photo.section-5.section-photo-3
+.section-photo.section-5.section-photo-3.has-scroll-animation
 	.container
 		.row
 			.col-sm-10.col-sm-center.col-md-6.col-md-left
 				.body-text
 					- for(let x = 1; x < 23; x++)
 						.space-size-40-px
-					p.text-shadow-1
-						strong
-							| Outside the club, an intoxicated, young man recovers on a sofa. Official sources state that 
-							a.link.border-dots.border-color-white(href="https://laotiantimes.com/2017/08/08/underage-drinking-growing-problem-laos" target="_blank") ​underage drinking 
-							| in Laos is common in restaurants and bars. Barriers to access are minimal with alcohol being affordable and easily available. In a move to promote health and safety among its residents, Vientiane’s Mayor has ​
-							a.link.border-dots.border-color-white(href="https://laotiantimes.com/2019/02/20/vientiane-bans-sale-alcohol-4pm" target="_blank") banned the sale of alcohol​​ 
-							| and alcoholic beverages before 4pm in the capital
-					hr.body-text-divider.divider-size-medium.mx-auto
+					.content
+						p.text-shadow-1
+							strong
+								| Outside the club, an intoxicated, young man recovers on a sofa. Official sources state that 
+								a.link.border-dots.border-color-white(href="https://laotiantimes.com/2017/08/08/underage-drinking-growing-problem-laos" target="_blank") ​underage drinking 
+								| in Laos is common in restaurants and bars. Barriers to access are minimal with alcohol being affordable and easily available. In a move to promote health and safety among its residents, Vientiane’s Mayor has ​
+								a.link.border-dots.border-color-white(href="https://laotiantimes.com/2019/02/20/vientiane-bans-sale-alcohol-4pm" target="_blank") banned the sale of alcohol​​ 
+								| and alcoholic beverages before 4pm in the capital
+						hr.body-text-divider.divider-size-medium.mx-auto
 					- for(let x = 1; x < 22; x++)
 						.space-size-40-px
-					p.text-shadow-1
-						strong The ban might prevent people from drinking earlier, but it is unlikely to affect alcohol sales, as revellers usually consume alcohol after work. Before the night is up, F&B outlets are littered with empty bottles.
-					hr.body-text-divider.divider-size-medium.mx-auto
+					.content
+						p.text-shadow-1
+							strong The ban might prevent people from drinking earlier, but it is unlikely to affect alcohol sales, as revellers usually consume alcohol after work. Before the night is up, F&B outlets are littered with empty bottles.
+						hr.body-text-divider.divider-size-medium.mx-auto
 					- for(let x = 1; x < 25; x++)
 						.space-size-40-px
 					.space-size-50-vh
-					p
-						strong Motorcycles are the most popular form of transport in Vientiane. Many motorists are underaged or do not have a proper driving licence. They also tend to drive under the influence of alcohol, hence drunk driving is the leading cause of road fatalities in Laos.
-					hr.body-text-divider.divider-size-medium.mx-auto
+					.content
+						p
+							strong Motorcycles are the most popular form of transport in Vientiane. Many motorists are underaged or do not have a proper driving licence. They also tend to drive under the influence of alcohol, hence drunk driving is the leading cause of road fatalities in Laos.
+						hr.body-text-divider.divider-size-medium.mx-auto
 					- for(let x = 1; x < 24; x++)
 						.space-size-40-px
-	.background-list.background-scroll-animation
-		.background-scroll-animation-inner
-			.background-item
+	.background-list.background-scroll-animation.background-scroll-sticky
+		.background-scroll-animation-inner.background-scroll-sticky-inner
+			.background-item.background-item-1
 				+image({
 					class: 'width-full height-full',
 					src: './img/chapter-1/image-4.jpeg'
 				})
-			.background-item
+			.background-item.background-item-2
 				+image({
 					class: 'width-full height-full',
 					src: './img/chapter-1/image-5.jpeg'
 				})
-			.background-item
+			.background-item.background-item-3
 				+image({
 						class: 'width-full height-full',
 						src: './img/chapter-1/image-6.jpeg'

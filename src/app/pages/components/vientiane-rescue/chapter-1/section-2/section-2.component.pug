@@ -6,14 +6,15 @@ include ../../../../../shared/components/image/image.component.pug
 			.col-sm-10.col-sm-center.col-md-6.col-md-left
 				.body-text
 					.space-size-100-vh
-					p.text-shadow-1
-						strong French paramedic and former firefighter Sébastien Perret is at the scene. He co-founded Vientiane Rescue in 2010 with seven local volunteers, mostly teenagers. Before Vientiane Rescue, Sébastien says that victims of serious accidents would often be left to die. It remains the country’s only free, emergency responder service. With the rising affluence in Laos, traffic has increased, resulting in more accidents.
-					h4.text-shadow-1
-						| "I think the first 18 months of work everything we did was just transporting bodies without any positive outcome." - Sébastien
-					+audioPrimary('./audio/Vientiane_SOT_02.mp3')
+					.content
+						p.text-shadow-1
+							strong French paramedic and former firefighter Sébastien Perret is at the scene. He co-founded Vientiane Rescue in 2010 with seven local volunteers, mostly teenagers. Before Vientiane Rescue, Sébastien says that victims of serious accidents would often be left to die. It remains the country’s only free, emergency responder service. With the rising affluence in Laos, traffic has increased, resulting in more accidents.
+						h4.text-shadow-1
+							| "I think the first 18 months of work everything we did was just transporting bodies without any positive outcome." - Sébastien
+						+audioPrimary('./audio/Vientiane_SOT_02.mp3')
 					.space-size-100-vh
-	.background-list.background-scroll-animation
-		.background-scroll-animation-inner
+	.background-list.background-scroll-sticky
+		.background-scroll-sticky-inner
 			.background-item
 				+image({
 					class: 'width-full height-full',

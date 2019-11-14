@@ -1,20 +1,22 @@
 include ../../../../../shared/components/image/image.component.pug
 
-.section-photo.section-7.section-photo-4
+.section-photo.section-7.section-photo-4.has-scroll-animation
 	.container
 		.row
 			.col-sm-10.col-sm-center.col-md-right.col-md-6
 				.body-text
 					- for(let x = 1; x < 23; x++)
 						.space-size-40-px
-					p.text-shadow-1
-						strong Vientiane Rescue’s ambulances are dispatched 24/7 from four stations located near ‘hot spots’ across the city. Braving crowded road conditions, volunteer drivers weave in and out of busy traffic to get to a crash site within three to seven minutes. On a busy night, Vientiane Rescue’s trained first-aid and emergency medical services volunteers respond to an average of 20 calls.
-					hr.body-text-divider.divider-size-medium.mx-auto
+					.content
+						p.text-shadow-1
+							strong Vientiane Rescue’s ambulances are dispatched 24/7 from four stations located near ‘hot spots’ across the city. Braving crowded road conditions, volunteer drivers weave in and out of busy traffic to get to a crash site within three to seven minutes. On a busy night, Vientiane Rescue’s trained first-aid and emergency medical services volunteers respond to an average of 20 calls.
+						hr.body-text-divider.divider-size-medium.mx-auto
 					- for(let x = 1; x < 25; x++)
 						.space-size-40-px
-					p.text-shadow-1
-						strong Accidents usually involve motorcyclists, and since helmets are seldom worn, the risk of getting seriously hurt is greater. Volunteers attend to varying severities of injuries; from minor cuts and scrapes to broken limbs and horrific accidents that end in death - as many as 50 fatalities a month.
-					hr.body-text-divider.divider-size-medium.mx-auto
+					.content
+						p.text-shadow-1
+							strong Accidents usually involve motorcyclists, and since helmets are seldom worn, the risk of getting seriously hurt is greater. Volunteers attend to varying severities of injuries; from minor cuts and scrapes to broken limbs and horrific accidents that end in death - as many as 50 fatalities a month.
+						hr.body-text-divider.divider-size-medium.mx-auto
 					- for(let x = 1; x < 23; x++)
 						.space-size-40-px
 					h4.text-shadow-1
@@ -22,24 +24,25 @@ include ../../../../../shared/components/image/image.component.pug
 					+audioPrimary('./audio/Vientiane_SOT_09.mp3')
 					- for(let x = 1; x < 23; x++)
 						.space-size-40-px
-					p.text-shadow-1
-						strong Vientiane Rescue has touched the lives of people from all walks of life. Through the years, volunteers have earned the trust and respect of the community. The free emergency service is often the first and only place people turn to in a calamity. Besides road accidents, Vientiane Rescue’s teams also fight fires and deliver babies. This evening, volunteers respond to a domestic violence case, which would involve the local police.
-					hr.body-text-divider.divider-size-medium.mx-auto
+					.content
+						p.text-shadow-1
+							strong Vientiane Rescue has touched the lives of people from all walks of life. Through the years, volunteers have earned the trust and respect of the community. The free emergency service is often the first and only place people turn to in a calamity. Besides road accidents, Vientiane Rescue’s teams also fight fires and deliver babies. This evening, volunteers respond to a domestic violence case, which would involve the local police.
+						hr.body-text-divider.divider-size-medium.mx-auto
 					- for(let x = 1; x < 21; x++)
 						.space-size-40-px
-	.background-list.background-scroll-animation
-		.background-scroll-animation-inner
-			.background-item
+	.background-list.background-scroll-animation.background-scroll-sticky
+		.background-scroll-animation-inner.background-scroll-sticky-inner
+			.background-item.background-item-1.is-active
 				+image({
 					class: 'width-full height-full',
 					src: './img/chapter-1/image-7.jpeg'
 				})
-			.background-item
+			.background-item.background-item-2
 				+image({
 					class: 'width-full height-full',
 					src: './img/chapter-1/image-9.jpeg'
 				})
-			.background-item
+			.background-item.background-item-3
 				+image({
 					class: 'width-full height-full',
 					src: './img/chapter-1/image-8.jpeg'

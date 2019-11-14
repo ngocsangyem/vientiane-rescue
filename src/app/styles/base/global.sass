@@ -186,11 +186,10 @@ img
 	left: 0
 	width: 100%
 	height: 100%
-	&.background-scroll-animation
+	&.background-scroll-sticky
 		img
 			object-fit: cover
-			// object-position: 0% 50%
-		.background-scroll-animation-inner
+		.background-scroll-sticky-inner
 			position: sticky
 			top: 0
 			left: 0
@@ -245,7 +244,12 @@ img
 		@media (max-width: 900px)
 			margin-top: 70vh
 			margin-bottom: 70vh
-
+	&.has-scroll-animation
+		.background-item
+			opacity: 0
+			transition: opacity .7s linear
+			&.is-active
+				opacity: 1
 .body-text-divider
 	display: block
 	border: none

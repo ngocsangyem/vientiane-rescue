@@ -8,11 +8,12 @@ include ../../../../../shared/components/image/image.component.pug
 					.space-size-100-vh
 					.space-size-40-px
 					+audioSecondary('./audio/Accident_Scene_Witness_4.mp3')
-					p.text-shadow-1
-						strong EVEN THOUGH road accidents are common in Vientiane, crash scenes still attract the morbid curiosity of bystanders. But for some, doing nothing was no longer enough. Instead, they were moved to take action, and signed up as volunteers with Vientiane Rescue.
+					.content
+						p.text-shadow-1
+							strong EVEN THOUGH road accidents are common in Vientiane, crash scenes still attract the morbid curiosity of bystanders. But for some, doing nothing was no longer enough. Instead, they were moved to take action, and signed up as volunteers with Vientiane Rescue.
 					.space-size-100-vh
-	.background-list.background-scroll-animation
-		.background-scroll-animation-inner
+	.background-list.background-scroll-sticky
+		.background-scroll-sticky-inner
 			.background-item
 				+image({
 					class: 'width-full height-full',

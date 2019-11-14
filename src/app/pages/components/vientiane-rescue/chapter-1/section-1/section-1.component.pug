@@ -8,11 +8,12 @@ include ../../../../../shared/components/image/image.component.pug
 					- for(let x = 1; x < 14; x++)
 						.space-size-40-px
 					.space-size-32-vh
-					p.text-shadow-1
-						strong UNDER THE GLARE of bright, white headlights and flashing, purple-blue neon lights, emergency responders are attending to two youth, who crashed their motorbikes into a ditch. It is the first emergency call of the evening and the start of a typical night in the Laotian capital, Vientiane.
+					.content
+						p.text-shadow-1
+							strong UNDER THE GLARE of bright, white headlights and flashing, purple-blue neon lights, emergency responders are attending to two youth, who crashed their motorbikes into a ditch. It is the first emergency call of the evening and the start of a typical night in the Laotian capital, Vientiane.
 					.space-size-100-vh
-	.background-list.background-scroll-animation
-		.background-scroll-animation-inner
+	.background-list.background-scroll-sticky
+		.background-scroll-sticky-inner
 			.background-item
 				+image({
 					class: 'width-full height-full',
