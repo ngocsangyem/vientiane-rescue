@@ -20,6 +20,7 @@
 		"update:package": "ncu && ncu -u && npm i"
 	},
 	"dependencies": {
+		"aos": "^3.0.0-beta.6",
 		"eva-icons": "^1.1.2",
 		"plyr": "^3.5.6",
 		"swiper": "^5.2.0"

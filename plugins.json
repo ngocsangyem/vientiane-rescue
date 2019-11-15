@@ -6,9 +6,6 @@
 		"src/assets/css/plyr.css"
 	],
 	"scripts": [
-		"src/assets/js/ls.object-fit.min.js",
-		"src/assets/js/ls.parent-fit.min.js",
-		"src/assets/js/ls.blur-up.min.js",
 		"src/assets/js/lazysizes.min.js",
 		"src/assets/js/plyr.min.js",
 		"src/assets/js/smoothscroll.js"

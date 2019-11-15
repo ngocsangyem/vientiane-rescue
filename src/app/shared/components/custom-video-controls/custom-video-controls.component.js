@@ -12,10 +12,6 @@ export class CustomVideoControlsComponent {
 	customPlyr() {
 		const players = Plyr.setup('.js-player');
 		players.forEach(player => {
-			console.log(
-				player.elements.original.closest('.section-video-player')
-			);
-
 			new Plyr(player);
 		});
 	}
