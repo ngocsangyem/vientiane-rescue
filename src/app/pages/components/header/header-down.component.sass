@@ -1,0 +1,47 @@
+.obw-header
+	.obw-logo
+		.obw-logo-main
+			display: none
+		.obw-logo-small
+			max-height: 40px
+	@media (max-width: 1099px)
+		height: 70px
+		.obw-logo
+			margin-right: auto
+			.obw-logo-main
+				max-height: 60px
+		.obw-social
+			.obw-social-button
+				padding: 8px
+		.obw-menu
+			position: fixed
+			top: 70px
+			right: 0
+			height: 100%
+			// width: 300px
+			width: 400px
+			// background-color: map-get($colors, white)
+			background-color: color-rgba(map-get($colors, neutral-8), .95)
+			// box-shadow: 0 0 10px #85888C
+			transform-origin: 0% 0%
+			transform: translate(110%, 0)
+			transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+			// padding-top: 100px
+			padding-bottom: 20px
+			.obw-menu-item
+				border-top: 1px solid rgba(180,180,180,.4)
+				&.is-active
+					.obw-menu-link
+						background-color: map-get($colors, primary)
+			.obw-menu-link
+				padding: 15px
+				font-size: 17px
+				// text-align: right
+				// color: map-get($colors, neutral-8)
+		&.is-open
+			.obw-menu
+				transform: none
+	@media (max-width: 619px)
+		.obw-menu
+			width: 100%
+	

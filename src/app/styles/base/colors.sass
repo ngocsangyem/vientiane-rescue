@@ -1,17 +1,15 @@
-$colors:(primary: #D44D23,
-success: #76D820,
-info: #3FBAFC,
-warning: #FFE032,
-danger: #FF6326,
-neutral-1: #f2f2f2,
-neutral-2: #e8e9e9,
-neutral-3: #d1d3d4,
-neutral-4: #babdbf,
-neutral-5: #808488,
-neutral-6: #666a6d,
-neutral-7: #4d5052,
-neutral-8: #333333,
-gray: #999999,
-light-gray: #dddddd,
-white: #ffffff,
-black: #000000)
+
+.border-color-white
+	border-color: map-get($colors, white)
+
+.color-primary
+	color: map-get($colors, primary)
+
+.background-black
+	background-color: map-get($colors, black)
+
+.background-primary
+	background-color: map-get($colors, primary)
+
+.background-white-light-opacity-9
+	background-color: color-rgba(map-get($colors, white), .9)

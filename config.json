@@ -25,12 +25,12 @@
 		"video": "video/"
 	},
 	"author": {
-		"name": "[your name]",
+		"name": "Our Better World",
 		"version": "v1.0.0",
-		"link": "exaample.com",
+		"link": "https://www.ourbetterworld.org/",
 		"lincense": "MIT",
-		"coding": "Coding by [your name]",
+		"coding": "Coding by obw",
 		"phone": "XXXXXXXXXX",
-		"email": "example@email.com"
+		"email": "obw@email.com"
 	}
 }

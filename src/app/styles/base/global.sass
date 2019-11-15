@@ -35,30 +35,6 @@ img
 	display: block
 	vertical-align: middle
 
-.height-100-vh
-	height: 100vh
-
-.height-full
-	height: 100%
-
-.height-half
-	height: 50vh
-
-.height-third
-	height: 33.33333vh
-
-.width-full
-	width: 100%
-
-.min-height-half
-	min-height: 50vh
-
-.min-height-full
-	min-height: 100vh
-
-.min-height-third
-	min-height: 33.33333vh
-
 .full-size
 	position: absolute
 	top: 0
@@ -92,23 +68,8 @@ img
 	@media (min-width: 1100px)
 		font-size: 20px
 
-.background-black
-	background-color: map-get($colors, black)
-
-.background-primary
-	background-color: map-get($colors, primary)
-
-.background-white-light-opacity-9
-	background-color: color-rgba(map-get($colors, white), .9)
-
 .border-dots
 	border-bottom: 1px dotted
-
-.border-color-white
-	border-color: map-get($colors, white)
-
-.color-primary
-	color: map-get($colors, primary)
 
 .text-block
 	position: absolute
@@ -155,18 +116,6 @@ img
 			margin-top: 1rem
 	@media (min-width: 1400px)
 		max-width: 1100px
-
-.space-size-40-px
-	height: 40px
-.space-size-32-vh
-	height: 32vh
-.space-size-40-vh
-	height: 40vh
-.space-size-50-vh
-	height: 50vh
-.space-size-100-vh
-	height: 100vh
-
 
 .col-sm-center
 	@media (min-width: 620px)
@@ -245,11 +194,15 @@ img
 			margin-top: 70vh
 			margin-bottom: 70vh
 	&.has-scroll-animation
+		background-color: map-get($colors, neutral-8)
 		.background-item
-			opacity: 0
-			transition: opacity .7s linear
+			img
+				opacity: 0
+				transition: opacity .7s linear
 			&.is-active
-				opacity: 1
+				img
+					opacity: 1
+
 .body-text-divider
 	display: block
 	border: none

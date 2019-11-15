@@ -1,24 +1,16 @@
 /* ES6 module */
 import { nodeToArray } from '../../../shared/helpers/index';
+import { HeaderMenuButtonComponent } from './header-menu-button/header-menu-button.component';
 
 export class HeaderComponent {
 	constructor() {
-		this.init();
+		this.HeaderInit();
 	}
 
-	init() {
-		this.clickMenu();
+	HeaderInit() {
+		new HeaderMenuButtonComponent();
 		this.scrollSpy();
 		this.smoothMenuLink();
-	}
-
-	clickMenu() {
-		const menuBtn = document.querySelector('.obw-header .obw-menu-button');
-		const headerOBW = document.querySelector('.obw-header');
-
-		menuBtn.addEventListener('click', () => {
-			headerOBW.classList.toggle('is-open');
-		});
 	}
 
 	slidingUnderline() {
@@ -91,6 +83,10 @@ export class HeaderComponent {
 					document.querySelector(menuLinks[nav].hash).scrollIntoView({
 						behavior: 'smooth'
 					});
+					// let topOfElement =
+					// 	document.querySelector(menuLinks[nav].hash).offsetTop -
+					// 	headerHeight;
+					// window.scroll({ top: topOfElement, behavior: 'smooth' });
 				});
 			}
 		}
@@ -98,7 +94,8 @@ export class HeaderComponent {
 
 	scrollSpy() {
 		const sections = document.querySelectorAll('.chapter-container');
-
+		const headerOBW = document.querySelector('.obw-header');
+		const headerHeight = headerOBW.offsetHeight;
 		window.onscroll = () => {
 			const scrollPos =
 				document.documentElement.scrollTop || document.body.scrollTop;
@@ -106,12 +103,13 @@ export class HeaderComponent {
 			for (let section in sections)
 				if (
 					sections.hasOwnProperty(section) &&
-					sections[section].offsetTop - 88 <= scrollPos
+					sections[section].offsetTop - headerHeight <= scrollPos
 				) {
 					const id = sections[section].id;
 					const activeLink = document.querySelector(
 						'.obw-menu-item.is-active'
 					);
+
 					if (activeLink) {
 						activeLink.classList.remove('is-active');
 					}

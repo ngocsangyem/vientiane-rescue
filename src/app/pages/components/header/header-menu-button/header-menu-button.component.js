@@ -1,7 +1,20 @@
 /* ES6 module */
 
-const HeaderMenuButtonComponent = () => {
-	console.log('This is HeaderMenuButtonComponent')
-}
+export class HeaderMenuButtonComponent {
+	constructor() {
+		this.HeaderMenuButtonInit();
+	}
 
-export {HeaderMenuButtonComponent};
+	HeaderMenuButtonInit() {
+		this.clickMenuButton();
+	}
+
+	clickMenuButton() {
+		const menuBtn = document.querySelector('.obw-header .obw-menu-button');
+		const headerOBW = document.querySelector('.obw-header');
+
+		menuBtn.addEventListener('click', () => {
+			headerOBW.classList.toggle('is-open');
+		});
+	}
+}

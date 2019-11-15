@@ -12,6 +12,7 @@ export class VientianeRescueComponent {
 		);
 
 		if (sectionsHaveAnimation && sectionsHaveAnimation.length > 0) {
+			let currentActiveIndex = -1;
 			sectionsHaveAnimation.forEach(section => {
 				const contents = nodeToArray(
 					section.querySelectorAll('.content')
@@ -23,13 +24,14 @@ export class VientianeRescueComponent {
 					let num = index + 1;
 
 					window.addEventListener('scroll', function() {
-						if (isInView(content)) {
+						if (isInView(content) && num !== currentActiveIndex) {
 							backgroundItem.forEach(item => {
 								item.classList.remove('is-active');
 							});
 							section
 								.querySelector(`.background-item-${num}`)
 								.classList.add('is-active');
+							currentActiveIndex = num;
 						}
 					});
 				});
