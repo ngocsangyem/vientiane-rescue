@@ -56,6 +56,31 @@ gulp.task(
 );
 
 gulp.task(
+	'deploy',
+	gulp.series([
+		'clean',
+		gulp.parallel(
+			'pug',
+			'sass',
+			'fonts',
+			'copy:video',
+			'copy:audio',
+			'images',
+			'concatCss',
+			'concatJs',
+			'browserify'
+		),
+		'deploy:heroku', // https://obw-stories.herokuapp.com/
+		'zip',
+		'rev',
+		'sitemap',
+		'author',
+		'size',
+		'done'
+	])
+);
+
+gulp.task(
 	'component',
 	gulp.series([
 		'clean',

@@ -16,6 +16,7 @@
 		"start": "set NODE_ENV=development & gulp serve --development",
 		"build": "set NODE_ENV=production & gulp build --production",
 		"build:components": "set NODE_ENV=production & gulp component --production",
+		"deploy:heroku": "set NODE_ENV=production & gulp deploy --production",
 		"clean:node": "rimraf node_modules",
 		"update:package": "ncu && ncu -u && npm i"
 	},
