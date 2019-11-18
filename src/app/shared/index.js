@@ -1,13 +1,15 @@
 // Components
 import {
 	AudioButtonPrimaryComponent,
-	CustomVideoControlsComponent
-} from "./components/index";
+	CustomVideoControlsComponent,
+	ChapterHeadingComponent
+} from './components/index';
 
 export class Shared {
 	constructor() {
 		new AudioButtonPrimaryComponent();
 		new CustomVideoControlsComponent();
+		new ChapterHeadingComponent();
 	}
 
 	static init() {

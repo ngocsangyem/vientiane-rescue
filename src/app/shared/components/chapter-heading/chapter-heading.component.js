@@ -2,6 +2,12 @@
 
 export class ChapterHeadingComponent {
 	constructor() {
-		console.log('This is ChapterHeadingComponent');
+		this.ChapterHeadingInit();
+	}
+	ChapterHeadingInit() {
+		ScrollOut({
+			threshold: 0.2,
+			once: false
+		});
 	}
 }

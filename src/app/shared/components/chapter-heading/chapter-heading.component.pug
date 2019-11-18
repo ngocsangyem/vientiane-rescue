@@ -6,7 +6,7 @@ mixin chapterHeading(spec)
 	- spec.chapter = spec.chapter || ''
 
 	.chapter-heading.background-black.position-relative.min-height-third.height-third(class=spec.class)&attributes(attributes)
-		.chapter-heading-content.text-center.text-block.text-block-y-center.text-block-x-center.fw-700
+		.chapter-heading-content.text-center.text-block.text-block-y-center.text-block-x-center.fw-700(data-scroll)
 			if block
 				block
 			else
