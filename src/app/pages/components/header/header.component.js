@@ -78,20 +78,19 @@ export class HeaderComponent {
 		const headerHeight = headerOBW.offsetHeight;
 		for (let nav in menuLinks) {
 			if (menuLinks.hasOwnProperty(nav)) {
-				console.log(menuLinks[nav].hash);
 				menuLinks[nav].addEventListener('click', e => {
 					e.preventDefault();
 					headerOBW.classList.remove('is-open');
 					document.querySelector(menuLinks[nav].hash).scrollIntoView({
 						behavior: 'smooth'
 					});
-					let topOfElement =
-						document.querySelector(menuLinks[nav].hash).offsetTop -
-						headerHeight;
-					window.scroll({
-						top: topOfElement,
-						behavior: 'smooth'
-					});
+					// let topOfElement =
+					// 	document.querySelector(menuLinks[nav].hash).offsetTop -
+					// 	headerHeight;
+					// window.scroll({
+					// 	top: topOfElement,
+					// 	behavior: 'smooth'
+					// });
 				});
 			}
 		}

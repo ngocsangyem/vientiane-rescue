@@ -8,7 +8,6 @@
 	"scripts": [
 		"src/assets/js/lazysizes.min.js",
 		"src/assets/js/plyr.min.js",
-		"src/assets/js/smoothscroll.js",
 		"src/assets/js/scroll-out.js"
 	]
 }
