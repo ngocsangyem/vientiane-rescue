@@ -81,16 +81,16 @@ export class HeaderComponent {
 				menuLinks[nav].addEventListener('click', e => {
 					e.preventDefault();
 					headerOBW.classList.remove('is-open');
-					document.querySelector(menuLinks[nav].hash).scrollIntoView({
-						behavior: 'smooth'
-					});
-					// let topOfElement =
-					// 	document.querySelector(menuLinks[nav].hash).offsetTop -
-					// 	headerHeight;
-					// window.scroll({
-					// 	top: topOfElement,
+					// document.querySelector(menuLinks[nav].hash).scrollIntoView({
 					// 	behavior: 'smooth'
 					// });
+					let topOfElement =
+						document.querySelector(menuLinks[nav].hash).offsetTop -
+						headerHeight;
+					window.scroll({
+						top: topOfElement,
+						behavior: 'smooth'
+					});
 				});
 			}
 		}
