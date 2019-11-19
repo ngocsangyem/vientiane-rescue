@@ -10,10 +10,12 @@ include ../../../../../shared/components/image/image.component.pug
 						p.text-shadow-1
 							strong
 								| Outside the club, an intoxicated, young man recovers on a sofa. Official sources state that 
-								a.link.border-dots.border-color-white(href="https://laotiantimes.com/2017/08/08/underage-drinking-growing-problem-laos" target="_blank") ​underage drinking 
-								| in Laos is common in restaurants and bars. Barriers to access are minimal with alcohol being affordable and easily available. In a move to promote health and safety among its residents, Vientiane’s Mayor has ​
-								a.link.border-dots.border-color-white(href="https://laotiantimes.com/2019/02/20/vientiane-bans-sale-alcohol-4pm" target="_blank") banned the sale of alcohol​​ 
-								| and alcoholic beverages before 4pm in the capital
+								a.link.border-dots.border-color-white(href="https://laotiantimes.com/2017/08/08/underage-drinking-growing-problem-laos" target="_blank")
+									span ​underage drinking 
+								|  in Laos is common in restaurants and bars. Barriers to access are minimal with alcohol being affordable and easily available. In a move to promote health and safety among its residents, Vientiane’s Mayor has ​
+								a.link.border-dots.border-color-white(href="https://laotiantimes.com/2019/02/20/vientiane-bans-sale-alcohol-4pm" target="_blank")
+									span banned the sale of alcohol​​ 
+								|  and alcoholic beverages before 4pm in the capital
 						hr.body-text-divider.divider-size-medium.mx-auto
 					- for(let x = 1; x < 22; x++)
 						.space-size-40-px
@@ -32,7 +34,7 @@ include ../../../../../shared/components/image/image.component.pug
 						.space-size-40-px
 	.background-list.background-scroll-animation.background-scroll-sticky
 		.background-scroll-animation-inner.background-scroll-sticky-inner
-			.background-item.background-item-1
+			.background-item.background-item-1.is-active
 				+image({
 					class: 'width-full height-full',
 					src: './img/chapter-1/image-4.jpeg'
