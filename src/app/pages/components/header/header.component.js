@@ -1,6 +1,6 @@
 /* ES6 module */
-import { nodeToArray } from '../../../shared/helpers/index';
-import { HeaderMenuButtonComponent } from './header-menu-button/header-menu-button.component';
+import { nodeToArray, isInView } from "../../../shared/helpers/index";
+import { HeaderMenuButtonComponent } from "./header-menu-button/header-menu-button.component";
 
 export class HeaderComponent {
 	constructor() {
@@ -14,57 +14,57 @@ export class HeaderComponent {
 	}
 
 	slidingUnderline() {
-		const breakpoint = window.matchMedia('(min-width: 1100px)').matches;
+		const breakpoint = window.matchMedia("(min-width: 1100px)").matches;
 		let activeLink = document.querySelector(
-			'.obw-header .obw-menu-list .obw-menu-item.is-active'
+			".obw-header .obw-menu-list .obw-menu-item.is-active"
 		);
 		let underline = document.querySelector(
-			'.obw-header .obw-menu-navbar .obw-menu-line'
+			".obw-header .obw-menu-navbar .obw-menu-line"
 		);
-		const menuList = document.querySelector('.obw-header .obw-menu-list');
+		const menuList = document.querySelector(".obw-header .obw-menu-list");
 		const menuLinkList = nodeToArray(
 			document.querySelectorAll(
-				'.obw-header .obw-menu-list .obw-menu-item'
+				".obw-header .obw-menu-list .obw-menu-item"
 			)
 		);
 		const menuAnchors = nodeToArray(
 			document.querySelectorAll(
-				'.obw-header .obw-menu-list .obw-menu-item'
+				".obw-header .obw-menu-list .obw-menu-item"
 			)
 		);
 
 		function setActiveUnderline(activeLink, underline) {
-			underline.style.left = activeLink.offsetLeft + 'px';
-			underline.style.width = activeLink.offsetWidth + 'px';
+			underline.style.left = activeLink.offsetLeft + "px";
+			underline.style.width = activeLink.offsetWidth + "px";
 		}
 
 		if (activeLink && breakpoint) {
 			setActiveUnderline(activeLink, underline);
 
-			menuList.addEventListener('mouseover', function(event) {
+			menuList.addEventListener("mouseover", function(event) {
 				let selectedWidth = event.target.offsetWidth;
 				let newleftpos = event.target.offsetLeft;
-				underline.style.left = newleftpos + 'px';
-				underline.style.width = selectedWidth + 'px';
+				underline.style.left = newleftpos + "px";
+				underline.style.width = selectedWidth + "px";
 			});
 
-			menuList.addEventListener('mouseout', function(event) {
-				underline.style.left = activeLink.offsetLeft + 'px';
-				underline.style.width = activeLink.offsetWidth + 'px';
+			menuList.addEventListener("mouseout", function(event) {
+				underline.style.left = activeLink.offsetLeft + "px";
+				underline.style.width = activeLink.offsetWidth + "px";
 			});
 
 			menuAnchors.forEach(anchor => {
-				anchor.addEventListener('click', function(event) {
+				anchor.addEventListener("click", function(event) {
 					event.preventDefault();
 					menuLinkList.forEach(list => {
-						list.classList.remove('is-active');
+						list.classList.remove("is-active");
 					});
-					event.target.parentNode.classList.add('is-active');
+					event.target.parentNode.classList.add("is-active");
 
 					activeLink = document.querySelector(
-						'.obw-header .obw-menu-list .obw-menu-item.is-active'
+						".obw-header .obw-menu-list .obw-menu-item.is-active"
 					);
-					underline = document.querySelector('.obw-menu-line');
+					underline = document.querySelector(".obw-menu-line");
 
 					setActiveUnderline(activeLink, underline);
 				});
@@ -73,14 +73,14 @@ export class HeaderComponent {
 	}
 
 	smoothMenuLink() {
-		const menuLinks = document.querySelectorAll('.obw-menu-link');
-		const headerOBW = document.querySelector('.obw-header');
+		const menuLinks = document.querySelectorAll(".obw-menu-link");
+		const headerOBW = document.querySelector(".obw-header");
 		const headerHeight = headerOBW.offsetHeight;
 		for (let nav in menuLinks) {
 			if (menuLinks.hasOwnProperty(nav)) {
-				menuLinks[nav].addEventListener('click', e => {
+				menuLinks[nav].addEventListener("click", e => {
 					e.preventDefault();
-					headerOBW.classList.remove('is-open');
+					headerOBW.classList.remove("is-open");
 					// document.querySelector(menuLinks[nav].hash).scrollIntoView({
 					// 	behavior: 'smooth'
 					// });
@@ -89,7 +89,7 @@ export class HeaderComponent {
 						headerHeight;
 					window.scroll({
 						top: topOfElement,
-						behavior: 'smooth'
+						behavior: "smooth"
 					});
 				});
 			}
@@ -109,30 +109,30 @@ export class HeaderComponent {
 	}
 
 	scrollSpy() {
-		const sections = document.querySelectorAll('.chapter-container');
-		const headerOBW = document.querySelector('.obw-header');
+		const sections = document.querySelectorAll(".chapter-container");
+		const headerOBW = document.querySelector(".obw-header");
 		const headerHeight = headerOBW.offsetHeight;
 		window.onscroll = () => {
 			const scrollPos =
 				document.documentElement.scrollTop || document.body.scrollTop;
-
-			for (let section in sections)
+			for (let section in sections) {
 				if (
 					sections.hasOwnProperty(section) &&
 					sections[section].offsetTop - headerHeight <= scrollPos
 				) {
 					const id = sections[section].id;
 					const activeLink = document.querySelector(
-						'.obw-menu-item.is-active'
+						".obw-menu-item.is-active"
 					);
 
 					if (activeLink) {
-						activeLink.classList.remove('is-active');
+						activeLink.classList.remove("is-active");
 					}
 					document
 						.querySelector(`.obw-menu-link[href*=${id}]`)
-						.parentNode.classList.add('is-active');
+						.parentNode.classList.add("is-active");
 				}
+			}
 		};
 	}
 }
